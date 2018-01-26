@@ -45,6 +45,24 @@ public class Magpie3
 		{
 			response = "Tell me more about your family.";
 		}
+		else if (findKeyword(statement, "cat")>=0||findKeyword(statement,"dog")>=0){
+			response = "Tell me more about your pets.";
+		}
+		else if(findKeyword(statement,"Ms.Bushyeager")>=0){
+			response = "She soundsd like a swell teacher.";
+		}
+		else if(statement.trim().length()==0){
+			response = "Say something, please";
+		}
+		else if(findKeyword(statement,"you")>=0){
+			response = "I don't want to talk about myself.";
+		}
+		else if(findKeyword(statement,"work")>=0){
+			response = "Do you regularly have a lot of works?";
+		}
+		else if(findKeyword(statement,"rain")>=0){
+			response = "Then the temperature must be dropped. Wear more cloths.";
+		}
 		else
 		{
 			response = getRandomResponse();
@@ -91,7 +109,7 @@ public class Magpie3
 			}
 			if (psn + goal.length() < phrase.length())
 			{
-				after = phrase.substring(
+				after = phrase.substring(                     
 						psn + goal.length(),
 						psn + goal.length() + 1);
 			}
